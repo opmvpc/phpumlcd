@@ -15,6 +15,7 @@ class ClassDiagram
     {
         $code = static::readFile($path);
         $ast = Parser::parse($code);
+
         return MermaidVisitor::visit($ast);
     }
 

@@ -3,7 +3,6 @@
 
 namespace Opmvpc\ClassDiagram;
 
-
 use Opmvpc\ClassDiagram\Diagram\Diagram;
 use PhpParser\Node;
 use PhpParser\NodeDumper;
@@ -16,7 +15,8 @@ class MermaidVisitor
     {
         $traverser = new NodeTraverser();
         $traverser->addVisitor(new class extends NodeVisitorAbstract {
-            public function enterNode(Node $node) {
+            public function enterNode(Node $node)
+            {
             }
         });
 

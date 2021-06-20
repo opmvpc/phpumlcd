@@ -3,7 +3,6 @@
 
 namespace Opmvpc\ClassDiagram\Tests\resources\SimpleClass;
 
-
 class SimpleClass
 {
     protected array $attribute;
@@ -32,6 +31,4 @@ class SimpleClass
     {
         $this->attribute = $attribute;
     }
-
-
 }
