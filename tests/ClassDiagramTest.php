@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class ClassDiagramTest extends TestCase
 {
-    protected const SIMPLECLASSPATH = './resources/SimpleClass/SimpleClass.php';
+    protected const SIMPLECLASSPATH = __DIR__ . '/resources/SimpleClass/SimpleClass.php';
 
     public function testSimpleClassParsing(): void
     {
