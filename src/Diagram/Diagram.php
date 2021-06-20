@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Opmvpc\ClassDiagram\ClassDiagramStructure;
+namespace Opmvpc\ClassDiagram\Diagram;
 
 
 class Diagram
