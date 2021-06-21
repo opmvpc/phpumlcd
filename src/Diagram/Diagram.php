@@ -28,6 +28,4 @@ class Diagram
     {
         return $this->stereotypes;
     }
-
-
 }

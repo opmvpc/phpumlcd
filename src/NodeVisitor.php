@@ -3,14 +3,13 @@
 
 namespace Opmvpc\ClassDiagram;
 
-
 use Opmvpc\ClassDiagram\Diagram\ConcreteClass;
 use Opmvpc\ClassDiagram\Diagram\Diagram;
 use PhpParser\Node;
 use PhpParser\NodeVisitorAbstract;
 
-class NodeVisitor extends NodeVisitorAbstract {
-
+class NodeVisitor extends NodeVisitorAbstract
+{
     protected Diagram $diagram;
 
     /**
