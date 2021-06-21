@@ -11,6 +11,8 @@ class ClassDiagramTest extends TestCase
 
     public function testSimpleClassParsing(): void
     {
-        ClassDiagram::createClassDiagramStructure(static::SIMPLECLASSPATH);
+        $diagram = ClassDiagram::createClassDiagramStructure((string) static::SIMPLECLASSPATH);
+        var_dump($diagram);
+        $this->assertCount(1, $diagram->getStereotypes());
     }
 }

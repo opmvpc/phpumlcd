@@ -3,28 +3,33 @@
 
 namespace Opmvpc\ClassDiagram;
 
+use InvalidArgumentException;
 use Opmvpc\ClassDiagram\Diagram\Diagram;
 use PhpParser\Node;
 use PhpParser\NodeDumper;
 use PhpParser\NodeTraverser;
-use PhpParser\NodeVisitorAbstract;
 
 class MermaidVisitor
 {
-    public static function visit($ast): Diagram
+    /**
+     * @param Node[] $ast
+     * @return Diagram
+     */
+    public static function visit(?array $ast): Diagram
     {
+        if ($ast === null) {
+            throw new InvalidArgumentException('Error: AST is null in MermaidVisitor::visit($ast)');
+        }
+
         $traverser = new NodeTraverser();
-        $traverser->addVisitor(new class extends NodeVisitorAbstract {
-            public function enterNode(Node $node)
-            {
-            }
-        });
+        $nodeVisitor = new NodeVisitor();
+        $traverser->addVisitor($nodeVisitor);
 
 
         $ast = $traverser->traverse($ast);
         $dumper = new NodeDumper;
         echo $dumper->dump($ast) . "\n";
 
-        return new Diagram();
+        return $nodeVisitor->getDiagram();
     }
 }
